@@ -4,11 +4,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", sans-serif;
-  --font-display: "Inter", var(--font-fallback);
-  --bg-color: #1B1B1B;
-  --heading-color: #FFFFFF;
-  --text-color: #D6D6D6;
+  --font-fallback: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', sans-serif;
+  --font-display: 'Inter', var(--font-fallback);
+  --bg-color: #1b1b1b;
+  --heading-color: #ffffff;
+  --text-color: #d6d6d6;
   --hint-color: #696969;
   --text-disabled-color: #292929;
   --content-width: 500px;
@@ -24,7 +24,6 @@
 html,
 body {
   margin: 0;
-  min-height: 100svh;
   width: 100%;
   height: 100%;
   display: flex;
@@ -132,6 +131,7 @@ h6 {
 }
 
 .name {
+  display: inline-block;
   color: var(--heading-color);
   font-size: 1.75rem;
   font-weight: 500;
@@ -181,7 +181,7 @@ h6 {
 /******************/
 
 @keyframes slide-to-bottom {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(-10px);
   }
@@ -193,9 +193,9 @@ h6 {
 }
 
 @keyframes pop {
-  0% {
+  from {
     opacity: 0;
-    transform: scale(0.0);
+    transform: scale(0);
   }
 
   to {
@@ -204,16 +204,35 @@ h6 {
   }
 }
 
+@keyframes blur-appear {
+  from {
+    opacity: 0;
+    filter: blur(16px);
+    transform: scale(1.4);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 1;    
+    filter: blur(0);
+  }
+}
+
 .animation-slide-to-bottom { --animation: slide-to-bottom; }
+.animation-blur-appear     { --animation: blur-appear; }
 .animation-pop             { --animation: pop; }
 
 [data-animate] {
   --start: 0ms;
+  --duration: 600ms;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   [data-animate] {
-    animation: var(--animation) 0.6s both;
+    animation: var(--animation) var(--duration) both;
     animation-delay: var(--start);
   }
 }

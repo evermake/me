@@ -16,20 +16,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <main class="root">
-      <h1 class="name">Vladislav Deryabkin</h1>
+      <h1 class="name animation-blur-appear" data-animate style="--start: 800ms; --duration:1000ms">
+        Vladislav Deryabkin
+      </h1>
       <div class="nick-and-socials">
-        <h2 class="nick animation-slide-to-bottom" data-animate>evermake</h2>
+        <h2 class="nick animation-slide-to-bottom" style="--start: 200ms" data-animate>evermake</h2>
         <div class="socials">
-          <a href="https://t.me/evermake" target="_blank" class="social animation-pop" style="--start: 240ms" data-animate><span class="icon i-telegram"></span></a>
-          <a href="https://github.com/evermake" target="_blank" class="social animation-pop" style="--start: 120ms" data-animate><span class="icon i-github"></span></a>
+          <a href="https://t.me/evermake" target="_blank" class="social animation-pop" style="--start: 400ms" data-animate><span class="icon i-telegram"></span></a>
+          <a href="https://github.com/evermake" target="_blank" class="social animation-pop" style="--start: 200ms" data-animate><span class="icon i-github"></span></a>
         </div>
       </div>
       <hr class="sep" style="--start: 200ms">
       <section class="prose">
-        <p class="animation-slide-to-bottom" style="--start: 120ms" data-animate>Undergraduate student at <a href="https://innopolis.university/en" target="_blank">Innopolis University</a> exploring web, mastering JavaScript, building modern interfaces.</p>
+        <p class="animation-slide-to-bottom" style="--start: 1000ms" data-animate>
+          Undergraduate student at
+          <a href="https://innopolis.university/en" target="_blank">Innopolis University</a>
+          exploring web, mastering JavaScript, building modern interfaces.
+        </p>
       </section>
     </main>
     <script type="module" src="/main.js"></script>
