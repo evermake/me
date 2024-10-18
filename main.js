@@ -4,6 +4,24 @@ const iconsSvg = {
   instagram: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="#888888" d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32m48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56m40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>`,
 }
 
+const linksEncoded = {
+  gh: {
+    domain1: 'com',
+    domain2: 'github',
+    handle: 'evermake',
+  },
+  tg: {
+    domain1: 'me',
+    domain2: 't',
+    handle: 'evermake',
+  },
+  ig: {
+    domain1: 'com',
+    domain2: 'instagram',
+    handle: 'www1adis1ove',
+  },
+}
+
 if (document.readyState === 'loading')
   document.addEventListener('DOMContentLoaded', main)
 else
@@ -11,6 +29,7 @@ else
 
 function main() {
   createCssForIcons()
+  generateRealLinks()
 }
 
 function createCssForIcons() {
@@ -48,4 +67,20 @@ function createIconDataUri(svg) {
     .replace(/>/g, '%3E')
 
   return `image/svg+xml;utf8,${svgEncoded}`
+}
+
+function generateRealLinks() {
+  document
+    .querySelectorAll('a[data-link]')
+    .forEach((el) => {
+      const linkId = el.dataset['link']
+      el.setAttribute('href', decodeLink(linkId))
+    })
+}
+
+function decodeLink(id) {
+  const encoded = linksEncoded[id]
+  if (!encoded) return '';
+  const { domain1, domain2, handle } = encoded
+  return `https://${domain2}.${domain1}/${handle}`
 }
