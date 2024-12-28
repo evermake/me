@@ -23,8 +23,9 @@ _Masterpieces of the computer art._
 - [Telegram](https://telegram.org) — cloud-based messenger.
 - [Raycast](https://www.raycast.com) — app launcher with productivity tools.
 - [Linear](https://linear.app) — software projects planning tool.
-- [Arc](https://arc.net/) and [Dia](https://www.diabrowser.com) — browsers by [The Browser Company](https://thebrowser.company).
+- [Arc](https://arc.net) and [Dia](https://www.diabrowser.com) — browsers by [The Browser Company](https://thebrowser.company).
 - [Things](https://culturedcode.com/things) — personal task manager.
+- [1Password](https://1password.com) — password manager.
 - [Screen Studio](https://www.screen.studio) — screen recorder for macOS.
 - [Cursor](https://www.cursor.com) — AI code editor.
 - [CleanShot X](https://cleanshot.com) — screenshot and screen recording app for macOS.
