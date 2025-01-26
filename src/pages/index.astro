@@ -1,11 +1,24 @@
 ---
+import AnimatedLetters from '../components/AnimatedLetters.vue'
 import Base from '../layouts/Base.astro'
 ---
 
 <Base title="evermake" description="Hi, I'm Vlad, a frontend developer.">
   <main class="root">
-    <h1 class="name animation-blur-appear" data-animate style="--start: 800ms; --duration: 1000ms">
-      Vladislav Deryabkin
+    <svg class="noise">
+      <filter id="noise">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.7"
+          numOctaves="1"
+          stitchTiles="stitch"
+        />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise)" />
+    </svg>
+    <h1 class="name" data-animate style="--start: 800ms; --duration: 1000ms">
+      <AnimatedLetters text="Vladislav" />
+      <AnimatedLetters text="Deryabkin" />
     </h1>
     <div class="nick-and-socials">
       <h2 class="nick animation-slide-to-bottom" style="--start: 200ms" data-animate>evermake</h2>
@@ -141,6 +154,18 @@ function decodeLink(id: string) {
 </script>
 
 <style is:global>
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0.17;
+  filter: brightness(0.5);
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
