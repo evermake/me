@@ -4,6 +4,7 @@ _Frontend that makes my inner perfectionist elated._
 
 - Unseen Studio • [unseen.co](https://unseen.co)
 - Vercel • [vercel.com](https://vercel.com)
+- Zed • [zed.dev](https://zed.dev)
 
 ### Personal Websites
 
