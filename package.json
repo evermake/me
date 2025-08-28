@@ -13,8 +13,13 @@
     "deps": "taze -wI minor"
   },
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
     "@astrojs/vue": "^5.1.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.8",
     "astro": "^5.13.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "vue": "^3.5.18"
   },
   "devDependencies": {
