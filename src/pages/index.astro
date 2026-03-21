@@ -1,0 +1,29 @@
+---
+import IconGithub from '~icons/simple-icons/github'
+import IconInstagram from '~icons/simple-icons/instagram'
+import IconTelegram from '~icons/simple-icons/telegram'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout>
+  <section>
+    <div class="flex justify-between">
+      <h1 class="text-3xl font-semibold">Vladislav Deryabkin</h1>
+      <div class="flex justify-between items-center gap-2">
+        <a href="https://github.com/evermake" class="inline-flex items-center gap-1.5" aria-label="GitHub">
+          <IconGithub class="size-5" />
+        </a>
+        <a href="https://t.me/evermake" class="inline-flex items-center gap-1.5" aria-label="Telegram">
+          <IconTelegram class="size-5" />
+        </a>
+        <a href="https://instagram.com/evermake.jpg" class="inline-flex items-center gap-1.5" aria-label="Instagram">
+          <IconInstagram class="size-5" />
+        </a>
+      </div>
+    </div>
+    <p>I'm a software engineer.</p>
+    <p>Currently working as a frontend developer at T-Bank.</p>
+    <p>Mastering JavaScript and React.</p>
+    <p>Playing with Effect and AI.</p>
+  </section>
+</BaseLayout>
