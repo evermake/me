@@ -1,0 +1,57 @@
+:global(:root) {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark;
+  color: #fff;
+  background-color: #242424;
+}
+
+:global(*, *::before, *::after) {
+  box-sizing: border-box;
+}
+
+:global(body) {
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+:global(body, html) {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: min(100dvw, 512px);
+  height: 0;
+  font-size: 1.175rem;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  padding: 50dvh 16px;
+  scrollbar-width: none;
+}
+
+.container p {
+  scroll-snap-align: center;
+
+  animation: story-animation cubic-bezier(0.5, 0, 0.5, 1);
+  animation-timeline: view();
+  animation-timeline: cover;
+}
+
+@keyframes story-animation {
+  0%,
+  100% {
+    filter: blur(4px);
+    transform: scale(0.97);
+    opacity: 0;
+  }
+
+  50% {
+    filter: blur(0px);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
