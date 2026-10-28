@@ -6,7 +6,9 @@
   background-color: #242424;
 }
 
-:global(*, *::before, *::after) {
+:global(*),
+:global(*::before),
+:global(*::after) {
   box-sizing: border-box;
 }
 
