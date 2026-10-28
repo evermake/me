@@ -10,7 +10,7 @@ function Page() {
       { type: 'module' },
     )
     worker.onmessage = (e: MessageEvent<OutMessageData>) => {
-      console.info('Incoming message from worker', e.data) // eslint-disable-line no-console
+      console.info('Incoming message from worker', e.data)
       switch (e.data.event) {
         case 'count-result':
           setCount(e.data.count)
